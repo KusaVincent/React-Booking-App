@@ -26,7 +26,11 @@ class BookingsPage extends Component {
                _id
                title
                price
+               description
                date
+               creator {
+                 email
+                }
              }
             }
           }
