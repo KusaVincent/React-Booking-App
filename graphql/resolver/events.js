@@ -25,14 +25,14 @@ module.exports = {
       description: args.eventInput.description,
       price: +args.eventInput.price,
       date: dateToString(args.eventInput.date),
-      creator: req.userId
+      creator: "5e4f3feeda8bb037d8ac2424"
     });
     let createdEvent;
     return event
       .save()
       .then(result => {
         createdEvent = transformEvent(result);
-        return User.findById(req.userId);
+        return User.findById("5e4f3feeda8bb037d8ac2424");
       })
       .then(user => {
         if (!user) {

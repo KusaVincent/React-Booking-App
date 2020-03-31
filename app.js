@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const graphqlSchema = require("./graphql/schema/index");
 const graphqlResolver = require("./graphql/resolver/index");
 const isAuth = require("./middleware/is-auth");
+// const Mpesa = require("./payment/m-pesa");
 
 const app = express();
 
@@ -34,7 +35,8 @@ app.use(
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-4orpk.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-4orpk.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`,
+    { useUnifiedTopology: true, useCreateIndex: true, useNewUrlParser: true }
   )
   .then(() => {
     app.listen(8000);

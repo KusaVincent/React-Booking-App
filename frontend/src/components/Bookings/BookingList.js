@@ -11,7 +11,7 @@ const bookingList = props => (
             <b style={{ color: "blue" }}>Event Name: </b> {booking.event.title}
             <br />
             <b style={{ color: "blue" }}>Event Date: </b>{" "}
-            {new Date(booking.createdAt).toLocaleDateString()}
+            {new Date(booking.event.date).toLocaleDateString()}
           </div>
           <div className="bookings_item-actions">
             <button
